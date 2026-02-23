@@ -5,6 +5,8 @@ repo: upptime-monitor
 sites:
   - name: My App
     url: https://upptime-nu.vercel.app/
+      - name: Test Endpoint
+    url: https://upptime-nu.vercel.app/ping.txt
     method: GET
     expect:
       statusCode: 200
