@@ -1,17 +1,38 @@
 # Change these first
-owner: MolefiEdward # Your GitHub organization or username, where this repository lives
-repo: upptime-monitor # The name of this repository
+owner: MolefiEdward
+repo: upptime-monitor
 
 sites:
-  - name: upptime
+  - name: My App
     url: https://upptime-nu.vercel.app/
+    method: GET
+    expect:
+      statusCode: 200
 
 status-website:
   baseUrl: /upptime-monitor
   name: "My App Status"
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
+  logoUrl: https://example.com/logo.png  # Optional but recommended
+  introTitle: "**Upptime** is the open-source uptime monitor and status page"
+  introMessage: This is a sample status page
+  navbar:
+    - title: Status
+      href: /
+    - title: GitHub
+      href: https://github.com/$OWNER/$REPO
 
+# Add this section
+workflow-schedule:
+  graphs: "0 0 * * *"        # Daily at midnight
+  responseTime: "0 23 * * *"  # Daily at 11 PM
+  staticSite: "0 1 * * *"     # Daily at 1 AM
+  summary: "0 0 * * *"        # Daily at midnight
+  updateTemplate: "0 0 * * *" # Daily at midnight
+  updates: "0 3 * * *"        # Daily at 3 AM
+  uptime: "*/5 * * * *"       # Every 5 minutes
 
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+# Notifications (optional)
+notifications:
+  - type: email
+    to:
+      - molefiedwardmofokeng@gmail.com
