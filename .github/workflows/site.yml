@@ -1,0 +1,19 @@
+name: Static Site CI
+on:
+  schedule:
+    - cron: "0 1 * * *"
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+      - uses: upptime/uptime-monitor@master
+        with:
+          command: "static-site"
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
