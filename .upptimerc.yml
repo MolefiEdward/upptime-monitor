@@ -1,11 +1,10 @@
 # Change these first
 owner: MolefiEdward
 repo: upptime-monitor
-
 sites:
   - name: My App
     url: https://upptime-nu.vercel.app/
-      - name: Test Endpoint
+  - name: Test Endpoint  # ✅ Aligned with first site
     url: https://upptime-nu.vercel.app/ping.txt
     method: GET
     expect:
